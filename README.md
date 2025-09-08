@@ -1,36 +1,26 @@
-README
-Overview
+README.MD 
+# 📘 Student Database Import Script
 
-This Bash script loads data from courses.csv and students.csv into the students PostgreSQL database. It ensures majors, courses, and students are properly inserted, creating relationships between them.
+## 🔎 Overview
+This Bash script loads data from `courses.csv` and `students.csv` into the **students** PostgreSQL database.  
+It ensures **majors, courses, and students** are inserted correctly and sets up their relationships.
 
-How it works
+---
 
-Clears old data using TRUNCATE.
+## ⚙️ How it works
+1. **Truncates** existing data (clears old rows).  
+2. Reads **`courses.csv`**:
+   - Inserts new majors and courses if they don’t exist.  
+   - Links them in the `majors_courses` join table.  
+3. Reads **`students.csv`**:
+   - Inserts each student with their major (or `NULL` if not found).  
+4. Prints a confirmation message when new records are added.  
 
-Reads courses.csv:
+---
 
-Inserts new majors and courses if they don’t exist.
-
-Creates entries in the majors_courses join table.
-
-Reads students.csv:
-
-Inserts each student with their major (or NULL if no match).
-
-Prints messages when new records are inserted.
-
-Usage
-
+## ▶️ Usage
 Make the script executable and run it:
-
+```bash
 chmod +x insert_data.sh
 ./insert_data.sh
 
-
-Make sure:
-
-You have a PostgreSQL user (my user which you won't be seeing :( ) with access to the students database.
-
-The students, majors, courses, and majors_courses tables already exist.
-
-courses.csv and students.csv are in the same directory.
