@@ -19,8 +19,5 @@ It ensures **majors, courses, and students** are inserted correctly and sets up 
 ---
 
 ## ▶️ Usage
-Make the script executable and run it:
-```bash
-chmod +x insert_data.sh
-./insert_data.sh
+For me only at the moment :)
 
