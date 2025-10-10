@@ -43,3 +43,52 @@ SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
+
+--
+-- Name: appointments; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.appointments (
+    "time" character varying(30),
+    customer_id integer,
+    service_id integer,
+    appointment_id integer NOT NULL
+);
+
+
+ALTER TABLE public.appointments OWNER TO freecodecamp;
+
+--
+-- Name: appointments_appointment_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.appointments_appointment_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.appointments_appointment_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: appointments_appointment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.appointments_appointment_id_seq OWNED BY public.appointments.appointment_id;
+
+
+--
+-- Name: customers; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.customers (
+    customer_id integer NOT NULL,
+    phone character varying(15),
+    name character varying(15)
+);
+
+
+ALTER TABLE public.customers OWNER TO freecodecamp;
