@@ -21,3 +21,25 @@ then
       SERVICE_MENU
 fi
 }
+
+MAIN_MENU() {
+  SERVICE_MENU
+  
+  echo -e "\nwhat is your phone number?"
+  read CUSTOMER_PHONE
+  CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$CUSTOMER_PHONE'")
+  if [[ -z $CUSTOMER_ID ]]
+  then
+      echo "whats your name"
+      read CUSTOMER_NAME
+      echo "what time would u like your service?"
+      read SERVICE_TIME
+      INSERT_CUSTOMER_DETAILS=$($PSQL "INSERT INTO customers(phone,name) VALUES('$CUSTOMER_PHONE', '$CUSTOMER_NAME')")
+      CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$CUSTOMER_PHONE'")
+      INSERT_APPOINTMENT=$($PSQL "INSERT INTO appointments(time, customer_id, service_id) VALUES('$SERVICE_TIME', $CUSTOMER_ID, $SERVICE_ID_SELECTED)")
+      echo "I have put you down for a $SERVICE_NAME_PICKED at $SERVICE_TIME, $CUSTOMER_NAME."
+  fi
+}
+
+
+MAIN_MENU
