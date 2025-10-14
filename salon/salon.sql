@@ -92,3 +92,58 @@ CREATE TABLE public.customers (
 
 
 ALTER TABLE public.customers OWNER TO freecodecamp;
+
+--
+-- Name: customers_customer_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.customers_customer_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.customers_customer_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: customers_customer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.customers_customer_id_seq OWNED BY public.customers.customer_id;
+
+
+--
+-- Name: services; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.services (
+    service_id integer NOT NULL,
+    name character varying(15)
+);
+
+
+ALTER TABLE public.services OWNER TO freecodecamp;
+
+--
+-- Name: services_service_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.services_service_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.services_service_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: services_service_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.services_service_id_seq OWNED BY public.services.service_id;
