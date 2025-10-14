@@ -147,3 +147,28 @@ ALTER TABLE public.services_service_id_seq OWNER TO freecodecamp;
 --
 
 ALTER SEQUENCE public.services_service_id_seq OWNED BY public.services.service_id;
+
+--
+-- Name: appointments appointment_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.appointments ALTER COLUMN appointment_id SET DEFAULT nextval('public.appointments_appointment_id_seq'::regclass);
+
+
+--
+-- Name: customers customer_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.customers ALTER COLUMN customer_id SET DEFAULT nextval('public.customers_customer_id_seq'::regclass);
+
+
+--
+-- Name: services service_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.services ALTER COLUMN service_id SET DEFAULT nextval('public.services_service_id_seq'::regclass);
+
+
+--
+-- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
