@@ -219,3 +219,24 @@ ALTER TABLE ONLY public.elements
 ALTER TABLE ONLY public.elements
     ADD CONSTRAINT unique_symbol UNIQUE (symbol);
 
+
+--
+-- Name: properties atomic_num_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.properties
+    ADD CONSTRAINT atomic_num_fkey FOREIGN KEY (atomic_number) REFERENCES public.elements(atomic_number);
+
+
+--
+-- Name: properties type_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.properties
+    ADD CONSTRAINT type_id_fk FOREIGN KEY (type_id) REFERENCES public.types(type_id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
