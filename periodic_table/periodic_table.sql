@@ -60,8 +60,6 @@ ALTER TABLE public.elements OWNER TO freecodecamp;
 -- Name: properties; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
-
-
 CREATE TABLE public.properties (
     atomic_number integer NOT NULL,
     atomic_mass numeric NOT NULL,
@@ -117,8 +115,6 @@ ALTER TABLE ONLY public.types ALTER COLUMN type_id SET DEFAULT nextval('public.t
 --
 -- Data for Name: elements; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
-
-
 
 INSERT INTO public.elements VALUES (1, 'H', 'Hydrogen');
 INSERT INTO public.elements VALUES (2, 'He', 'Helium');
