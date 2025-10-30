@@ -97,3 +97,32 @@ INSERT INTO public.users VALUES (5, 'user_1761825365923', 2, 426);
 INSERT INTO public.users VALUES (4, 'user_1761825365924', 5, 255);
 INSERT INTO public.users VALUES (7, 'user_1761825467734', 2, 62);
 INSERT INTO public.users VALUES (6, 'user_1761825467735', 5, 358);
+
+
+--
+-- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+--
+
+SELECT pg_catalog.setval('public.users_user_id_seq', 7, true);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (user_id);
+
+
+--
+-- Name: users users_username_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_username_key UNIQUE (username);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
