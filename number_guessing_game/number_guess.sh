@@ -48,3 +48,52 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.users (
+    user_id integer NOT NULL,
+    username character varying(22) NOT NULL,
+    games_played integer DEFAULT 0,
+    best_game integer
+);
+
+
+ALTER TABLE public.users OWNER TO freecodecamp;
+
+--
+-- Name: users_user_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.users_user_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_user_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: users_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.users_user_id_seq OWNED BY public.users.user_id;
+
+
+--
+-- Name: users user_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.users_user_id_seq'::regclass);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+INSERT INTO public.users VALUES (1, 't', 1, 10);
+INSERT INTO public.users VALUES (3, 'user_1761825319968', 2, 760);
+INSERT INTO public.users VALUES (2, 'user_1761825319969', 5, 97);
+INSERT INTO public.users VALUES (5, 'user_1761825365923', 2, 426);
+INSERT INTO public.users VALUES (4, 'user_1761825365924', 5, 255);
+INSERT INTO public.users VALUES (7, 'user_1761825467734', 2, 62);
+INSERT INTO public.users VALUES (6, 'user_1761825467735', 5, 358);
